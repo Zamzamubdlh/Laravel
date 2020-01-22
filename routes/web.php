@@ -116,7 +116,7 @@ Route::get('about/profil/{nama}/{alamat}/{sekolah}/{umur}', function ($nama, $al
 
 
 // Route Optional 3 Parameter
-Route::get('nama/{nama?}', function ($a = 'Romi') {
+Route::get('nama/{nama?}', function ($a = 'Zamzam Ubaidilah') {
     return "Nama Kamu $a";
 });
 
