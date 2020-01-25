@@ -18,6 +18,7 @@ class CreateElektronikTable extends Migration
             $table->string('nama_pembeli');
             $table->string('membeli_barang');
             $table->string('merk_barang');
+            $table->string('garansi_barang');
             $table->integer('harga_barang');
             $table->string('alamat_pembeli');
             $table->date('tgl_pembelian');

@@ -236,21 +236,22 @@ Route::get('testmodel-siswa',function()
 
 
 // Model elektrik
-Route::get('data-elektronik/take3', function ()
+Route::get('data-tokoelektronik/take3', function ()
 {
     $data = App\Elektronik::all()->take(3);
     return $data;
 });
-Route::get('data-elektronik/select', function ()
+Route::get('data-tokoelektronik/select', function ()
 {
-    $data = App\Elektronik::select('nama_pembeli','membeli_barang','merk_barang')->first();
+    $data = App\Elektronik::select('nama_pembeli','membeli_barang','merk_barang', 'garansi_barang')->first();
     return $data;
 });
-Route::get('data-elektronik/{nama_pembeli}/{membeli_barang}/{merk_barang}/{harga_barang}/{alamat_pembeli}/{tgl_pembelian}', function($nama_pembeli,$membeli_barang,$merk_barang,$harga_barang,$alamat_pembeli,$tgl_pembelian) {
+Route::get('data-tokoelektronik/{nama_pembeli}/{membeli_barang}/{merk_barang}/{garansi_barang}/{harga_barang}/{alamat_pembeli}/{tgl_pembelian}', function($nama_pembeli,$membeli_barang,$merk_barang,$garansi_barang,$harga_barang,$alamat_pembeli,$tgl_pembelian) {
     $post = new App\Elektronik;
     $post->nama_pembeli = $nama_pembeli;
     $post->membeli_barang = $membeli_barang;
     $post->merk_barang = $merk_barang;
+    $post->garansi_barang = $garansi_barang;
     $post->harga_barang = $harga_barang;
     $post->alamat_pembeli = $alamat_pembeli;
     $post->tgl_pembelian = $tgl_pembelian;
