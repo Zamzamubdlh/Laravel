@@ -259,3 +259,32 @@ Route::get('data-tokoelektronik/{nama_pembeli}/{membeli_barang}/{merk_barang}/{g
     return $post;
 // check record baru di database
     });
+
+// Controller
+Route::get('/', function () {
+    return view('welcome');
+});
+
+// Controller 1 Method
+Route::get('latihan','LatihanController@halo');
+
+// Controller 4 Method
+Route::get('tambah','LatihanController@tambah');
+Route::get('kurang','LatihanController@kurang');
+Route::get('bagi','LatihanController@bagi');
+Route::get('kali','LatihanController@kali');
+
+//Controller Operator Aritmatika
+Route::get('pertambahan/{a?}/{b?}','LatihanController@pertambahan');
+Route::get('perkurangan/{a?}/{b?}','LatihanController@perkurangan');
+Route::get('pembagian/{a?}/{b?}','LatihanController@pembagian');
+Route::get('perkalian/{a?}/{b?}','LatihanController@perkalian');
+
+// Controller Loop1
+Route::get('/data-1','LatihanController@loop1');    
+
+// Controller Loop2
+Route::get('/data-2','LatihanController@loop2');
+
+// Controller Gaji Perkantoran
+Route::get('/data-3','LatihanController@loop3');
