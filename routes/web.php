@@ -288,3 +288,17 @@ Route::get('/data-2','LatihanController@loop2');
 
 // Controller Gaji Perkantoran
 Route::get('/data-3','LatihanController@loop3');
+
+// Crud Tabungan
+Route::get('tabungan','TabunganController@index');
+Route::get('tabungan/{id}','TabunganController@show');
+Route::get('tabungan-tambah/{nis}/{nama}/{kelas}/{jumlah}','TabunganController@store');
+Route::get('tabungan-update/{id}/{nis}/{nama}/{kelas}/{jumlah}','TabunganController@update');
+Route::get('tabungan-delete/{id}/{nis}/{nama}/{kelas}/{jumlah}','TabunganController@delete');
+
+// Crud Customer
+Route::get('customer','CustomerController@index');
+Route::get('customer/{id}','CustomerController@show');
+Route::get('customer-tambah/{code_customer}/{name}/{email}/{country}/{city}/{sddress}/{contact_number}','CustomerController@store');
+Route::get('customer-update/{id}/{code_customer}/{name}/{email}/{country}/{city}/{sddress}/{contact_number}','CustomerController@update');
+Route::get('customer-delete/{id}','CustomerController@delete');

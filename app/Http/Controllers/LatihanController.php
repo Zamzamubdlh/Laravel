@@ -154,18 +154,18 @@ class LatihanController extends Controller
     public function loop3()
     {
         $data =[['nama' =>'Zamzam Ubaidilah','agama'=>'Islam','alamat'=>'Bandung','jenis_kelamin'=>'Laki-laki', 'Jabatan'=>'Manager','jam_kerja'=>300],
-                ['nama' =>'Tiara','agama'=>'Islam','alamat'=>'Jakarta','jenis_kelamin'=>'Perempuan', 'Jabatan'=>'Sekretaris', 'jam_kerja'=>100],
+                ['nama' =>'Tiara','agama'=>'Islam','alamat'=>'Jakarta','jenis_kelamin'=>'Perempuan', 'Jabatan'=>'Sekretaris', 'jam_kerja'=>220],
                 ['nama' =>'Rafli','agama'=>'Islam','alamat'=>'Bekasi','jenis_kelamin'=>'Laki-laki', 'Jabatan'=>'Staff', 'jam_kerja'=>255],
-                ['nama' =>'Putri','agama'=>'Islam','alamat'=>'Bogor','jenis_kelamin'=>'Perempuan', 'Jabatan'=>'Sekretaris', 'jam_kerja'=>220],
+                ['nama' =>'Putri','agama'=>'Islam','alamat'=>'Bogor','jenis_kelamin'=>'Perempuan', 'Jabatan'=>'Sekretaris', 'jam_kerja'=>100],
                 ['nama' =>'Riz','agama'=>'Islam','alamat'=>'Bojong','jenis_kelamin'=>'Laki-laki', 'Jabatan'=>'Staff', 'jam_kerja'=>200]
                 ];
-        foreach ($data as $key => $value) {
-                if ($value['Jabatan']=='Manager') {
+        foreach ($data as $val => $key) {
+                if ($key['Jabatan']=='Manager') {
                     $Gaji=5000000;
-                if ($value['jam_kerja'] >=250) {
+                if ($key['jam_kerja'] >= 250) {
                     $bonus=$Gaji/10;
                 }
-                elseif ($value['jam_kerja'] >=200) {
+                elseif ($key['jam_kerja'] >= 200) {
                     $bonus=$Gaji*5/1000;
                 }else {
                     $bonus=0;
@@ -174,12 +174,12 @@ class LatihanController extends Controller
                 $potongan=$gaji_bersih*2.5/100;
                 $gt=$gaji_bersih-$potongan;
                 }
-                elseif ($value['Jabatan']=='Sekretaris') {
+                elseif ($key['Jabatan']=='Sekretaris') {
                     $Gaji=3500000;
-                if ($value['jam_kerja'] >=250) {
+                if ($key['jam_kerja'] >= 250) {
                     $bonus=$Gaji/10;
                 }
-                elseif ($value['jam_kerja'] >=200) {
+                elseif ($key['jam_kerja'] >= 200) {
                     $bonus=$Gaji*5/100;
                 }else {
                     $bonus=0;
@@ -188,12 +188,12 @@ class LatihanController extends Controller
                 $potongan=$gaji_bersih*2.5/100;
                 $gt=$gaji_bersih-$potongan;
                 }
-                elseif ($value['Jabatan']=='Staff') {
+                elseif ($key['Jabatan']=='Staff') {
                     $Gaji=2500000;
-                if ($value['jam_kerja'] >=250) {
+                if ($key['jam_kerja'] >= 250) {
                     $bonus=$Gaji/10;
                 }
-                elseif ($value['jam_kerja'] >=200) {
+                elseif ($key['jam_kerja'] >= 200) {
                     $bonus=$Gaji*5/100;
                 }else {
                     $bonus=0;
@@ -202,16 +202,16 @@ class LatihanController extends Controller
                 $potongan=$gaji_bersih*2.5/100;
                 $gt=$gaji_bersih-$potongan;
                 }
-                echo "Nama : ".$value['nama'].
-                "<br>Agama : ".$value['agama'].
-                "<br>Alamat : ".$value['alamat'].
-                "<br>Jenis Kelamin : ".$value['jenis_kelamin'].
-                "<br>Jabatan : ".$value['Jabatan'].
-                "<br>Jam kerja : ".$value['jam_kerja'].
-                "<br>Gaji : ".$Gaji.
-                "<br>Bonus : ".$bonus.
-                "<br>Potongan : ".$potongan.
-                "<br>Gaji Total : "." Rp . " . $gt.
+                echo "Nama : ".$key['nama'].
+                "<br>Agama : ".$key['agama'].
+                "<br>Alamat : ".$key['alamat'].
+                "<br>Jenis Kelamin : ".$key['jenis_kelamin'].
+                "<br>Jabatan : ".$key['Jabatan'].
+                "<br>Jam kerja : ".$key['jam_kerja'].
+                "<br>Gaji : "." Rp. " .$Gaji.
+                "<br>Bonus : "." Rp. " .$bonus. 
+                "<br>PPN : "." Rp. " .$potongan.
+                "<br>Gaji Bersih : "." Rp. " .$gt.
                 "<hr>";
         }
     }
