@@ -294,7 +294,7 @@ Route::get('tabungan','TabunganController@index');
 Route::get('tabungan/{id}','TabunganController@show');
 Route::get('tabungan-tambah/{nis}/{nama}/{kelas}/{jumlah}','TabunganController@store');
 Route::get('tabungan-update/{id}/{nis}/{nama}/{kelas}/{jumlah}','TabunganController@update');
-Route::get('tabungan-delete/{id}/{nis}/{nama}/{kelas}/{jumlah}','TabunganController@delete');
+Route::get('tabungan-delete/{id}','TabunganController@delete');
 
 // Crud Customer
 Route::get('customer','CustomerController@index');
