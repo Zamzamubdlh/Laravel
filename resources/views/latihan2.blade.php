@@ -14,8 +14,19 @@
         Nis : {{$val->nis}} <br>
         Nama : {{$val->nama}} <br>
         Kelas : {{$val->kelas}} <br> 
-        Jumlah : {{$val->jumlah}} <hr>
-        
+        Jumlah : {{$val->jumlah}} <br>
+        @if ($val -> jumlah >= 50000)
+            Jenis Paket : Paket A
+        @elseif ($val -> jumlah >= 25000)
+            Jenis Paket : Paket B
+        @elseif ($val -> jumlah >= 10000)
+            Jenis Paket : Paket C
+        @else
+        Jenis Paket : -
+        @endif
+
+
+        <hr>
     @endforeach
 
 </body>

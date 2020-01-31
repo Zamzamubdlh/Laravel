@@ -307,3 +307,8 @@ Route::get('customer-delete/{id}','CustomerController@delete');
 Route::get('pass','PracticeController@pass');
 Route::get('pass1','PracticeController@pass1');
 Route::get('pass-tabungan','PracticeController@pass2');
+Route::get('pass-tabungan/{id}','PracticeController@pass3');
+
+// Passing Data Books
+Route::get('Daftar-books','BooksController@index');
+Route::get('Daftar-books/{id}','BooksController@show');

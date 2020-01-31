@@ -24,10 +24,16 @@ class PracticeController extends Controller
         return view('latihan1',['data'=>$siswa]);
     }
 
-    public function pass2()
+    
+public function pass2()
     {
         $tabungan = Tabungan::all()->take(10);
         return view('latihan2',compact('tabungan'));
     }
 
+    public function pass3($id)
+    {
+        $tabungan = Tabungan::findOrFail($id);
+        return view('latihan3',compact('tabungan'));
+    }
 }
