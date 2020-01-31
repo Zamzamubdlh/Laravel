@@ -302,3 +302,8 @@ Route::get('customer/{id}','CustomerController@show');
 Route::get('customer-tambah/{code_customer}/{name}/{email}/{country}/{city}/{sddress}/{contact_number}','CustomerController@store');
 Route::get('customer-update/{id}/{code_customer}/{name}/{email}/{country}/{city}/{sddress}/{contact_number}','CustomerController@update');
 Route::get('customer-delete/{id}','CustomerController@delete');
+
+// Passing Data
+Route::get('pass','PracticeController@pass');
+Route::get('pass1','PracticeController@pass1');
+Route::get('pass-tabungan','PracticeController@pass2');
